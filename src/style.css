@@ -1,0 +1,167 @@
+@font-face {
+  font-family: 'Saitamaar';
+  src: url(/Saitamaar-Regular.woff2) format('woff2');
+}
+
+html, body {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  color-scheme: light dark;
+}
+
+a, a:visited, a:hover, a:active {
+  color: LinkText;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+#playpause {
+  position: fixed;
+  top: 8px;
+  right: 8px;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#playpause:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+#credits {
+  position: fixed;
+  bottom: 8px;
+  left: 8px;
+  font-size: 16px;
+  font-family: Saitamaar;
+}
+
+#player {
+  white-space: pre;
+  font-size: 20px;
+  line-height: 1.1;
+  font-family: Saitamaar;
+  user-select: none;
+}
+
+@media (max-width: 1000px) {
+  #player {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 850px) {
+  #player {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 750px) {
+  #player {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 650px) {
+  #player {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  #player {
+    font-size: 10px;
+  }
+}
+
+/* пердол шрифта :3 */
+.backslash {
+  display: inline-block;
+  transform: scaleX(-1);
+}
+
+.parallel {
+  letter-spacing: -0.25em;
+  display: inline-block;
+  transform: rotate(-10deg);
+}
+
+@media (prefers-color-scheme: light) {
+  .homura {
+    color:  #6f08aa;
+    cursor: pointer;
+  }
+
+  .madoka {
+    color: #bf3f6c;
+    cursor: pointer;
+  }
+
+  #player:has(.homura:hover) .homura {
+    color: #550086;
+    text-shadow: 0 0 0.5em #550086;
+  }
+
+  #player:has(.homura:hover) .madoka {
+    color: #e66c96;
+  }
+
+  #player:has(.madoka:hover) .madoka {
+    color: #a0003b;
+    text-shadow: 0 0 0.5em #a0003b;
+  }
+
+  #player:has(.madoka:hover) .homura {
+    color: #974bc4;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html, body {
+    background-color: #080808;
+  }
+
+  .homura {
+    color:  #a650d8;
+    cursor: pointer;
+  }
+  .madoka {
+    color: #cf537e;
+    cursor: pointer;
+  }
+
+  #player:has(.homura:hover) .homura {
+    color: #c276ee;
+    text-shadow: 0 0 0.5em #c276ee;
+  }
+  
+  #player:has(.homura:hover) .madoka {
+    color: #94254c;
+  }
+  
+  #player:has(.madoka:hover) .madoka {
+    color: #f55c91;
+    text-shadow: 0 0 0.5em #f55c9180;
+  }
+  
+  #player:has(.madoka:hover) .homura {
+    color: rgb(114, 23, 167);
+  }
+}
